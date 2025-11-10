@@ -4,15 +4,13 @@ use std::collections::HashMap;
 
 #[derive(Clone)]
 pub struct MultiVariatePolynomial<F: PrimeField> {
-    pub coeffs: HashMap<Vec<u64>, F>,
-    pub len: usize,
+    pub coeffs: HashMap<Vec<u64>, F>
 }
 
 impl<F: PrimeField> MultiVariatePolynomial<F> {
-    pub fn new(coeffs: HashMap<Vec<u64>, F>, len: usize) -> Self {
+    pub fn new(coeffs: HashMap<Vec<u64>, F>) -> Self {
         Self {
-            coeffs,
-            len,
+            coeffs
         }
     }
 
@@ -93,7 +91,7 @@ mod tests {
         coeffs.insert(vec![0, 2], Fr::from(5u64)); // 5 * y^2
         coeffs.insert(vec![0, 0], Fr::from(7u64)); // 7 (constant)
 
-        let poly = MultiVariatePolynomial::new(coeffs, 2);
+        let poly = MultiVariatePolynomial::new(coeffs);
 
         // Evaluate f(2, 3) = 3*(2^2)*(3) + 5*(3^2) + 7 = 3*4*3 + 5*9 + 7 = 36 + 45 + 7 = 88
         let x = Fr::from(2u64);
