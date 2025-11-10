@@ -1,0 +1,9 @@
+[package]
+name = "sumcheck"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ark-ff = "0.4.2"
+rand = "0.8.5"
+ark-bls12-381 = "0.4"
